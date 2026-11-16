@@ -42,7 +42,7 @@ O site é dividido em:
 
 ## Link do site publicado
 
-👉 **https://oraulbarbosa.github.io/portfolio/**
+👉 **[https://oraulbarbosa.github.io/portfolio](https://oraulbarbosa.github.io/portifolio/)/**
 
 ## Explicação do funcionamento do projeto
 
@@ -113,7 +113,7 @@ Bootstrap (via CDN) é usado para ativar o componente.
 ## Como executar localmente
 
 1. Clone o repositório:
-   `git clone https://github.com/oraulbarbosa/portfolio.git`
+   `git clone [https://github.com/oraulbarbosa/portfolio.git](https://github.com/oraulbarbosa/portifolio.git)`
 2. Abra o arquivo `index.html` no navegador (ou use a extensão Live Server do VS Code).
 
 Não há dependências para instalar — tudo via CDN.
@@ -125,7 +125,7 @@ Não há dependências para instalar — tudo via CDN.
 3. Em *Source*, selecione **Deploy from a branch**
 4. Escolha a branch **main** e a pasta **/ (root)**
 5. Salve e aguarde alguns segundos — o site estará em
-   `https://oraulbarbosa.github.io/portfolio/`
+   `[https://oraulbarbosa.github.io/portfolio/](https://oraulbarbosa.github.io/portifolio/)`
 
 ## Contato
 
