@@ -1,5 +1,7 @@
 # Portfólio Pessoal — Raul Henrique Barbosa
 
+<img src="img/tela inicial site.png" alt="tela inicial">
+
 ![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-brightgreen)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
