@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raul Henrique Barbosa | Portfólio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts - JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #000000;
+            --fg: #ffffff;
+            --muted: #888888;
+            --border: #333333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.85) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar .nav-link {
+            color: var(--fg) !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--muted) !important;
+        }
+
+        .navbar-toggler {
+            border-color: var(--border);
+        }
+
+        /* ===== TRANSIÇÕES GERAIS ===== */
+        a {
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--muted) !important;
+        }
+
+        .card {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--muted) !important;
+        }
+
+        /* ===== FOTO ===== */
+        .foto-perfil {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .foto-perfil:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        /* ===== HABILIDADES — só ícones, estilo minimalista ===== */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 1.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background-color: #0a0a0a;
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .skill-icon:hover {
+            transform: translateY(-5px);
+            border-color: var(--muted);
+            background-color: #111111;
+        }
+
+        .skill-icon i {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .skill-icon span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        /* ===== ANIMAÇÃO DE ENTRADA (CSS puro) ===== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.9s ease both;
+        }
+
+        .fade-up-delay {
+            animation-delay: 0.2s;
+        }
+
+        /* ===== Carousel: ajuste de altura ===== */
+        .carousel-item img {
+            height: 420px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 576px) {
+            .carousel-item img {
+                height: 220px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#">
+                Raul Henrique Barbosa
+                <span class="d-block mono text-secondary" style="font-size: 0.7rem; font-weight: 400;">
+                    Creative Developer
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="container pt-5 mt-5 pb-5">
+        <div class="row align-items-center pt-4">
+            <div class="col-md-7 mb-4 mb-md-0 fade-up">
+                <h1 class="display-3 fw-bold lh-sm">
+                    Desenvolvedor <br>
+                    focado em construir <br>
+                    interfaces digitais.
+                </h1>
+            </div>
+            <div class="col-md-5 text-center text-md-end fade-up fade-up-delay">
+                <img src="img/perfil.jpg" alt="Foto de perfil de Raul Henrique Barbosa"
+                    class="img-fluid rounded-3 foto-perfil">
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="container py-5 mt-5">
+        <div class="row">
+            <div class="col-md-9 offset-md-1">
+                <h2 class="h2 fw-bold mb-5">Sobre mim.</h2>
+
+                <p class="fs-5 text-light mb-4" style="line-height: 1.8; font-weight: 400;">
+                    Sou um arquiteto e urbanista focado em criar soluções digitais que unem estética e funcionalidade.
+                    Com experiência em design e desenvolvimento front-end, busco sempre traduzir ideias complexas
+                    em interfaces simples e intuitivas.
+                </p>
+
+                <p class="fs-5 text-secondary" style="line-height: 1.8; font-weight: 400;">
+                    Atualmente estou estudando Desenvolvimento de Sistemas e desenvolvendo projetos pessoais para
+                    aprimorar
+                    minhas habilidades em HTML, CSS, Bootstrap e Python. Acredito que o bom design é aquele que resolve
+                    problemas de forma invisível e eficiente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES — só ícones -->
+    <section id="habilidades" class="container py-5 mt-5">
+        <div class="row">
+            <div class="col-md-9 offset-md-1">
+                <h2 class="h2 fw-bold mb-5">Habilidades.</h2>
+
+                <div class="skill-grid">
+
+                    <div class="skill-icon">
+                        <i class="bi bi-filetype-html"></i>
+                        <span>HTML5</span>
+                    </div>
+
+                    <div class="skill-icon">
+                        <i class="bi bi-filetype-css"></i>
+                        <span>CSS3</span>
+                    </div>
+
+                    <div class="skill-icon">
+                        <i class="bi bi-bootstrap-fill"></i>
+                        <span>Bootstrap</span>
+                    </div>
+
+                    <div class="skill-icon">
+                        <i class="bi bi-filetype-py"></i>
+                        <span>Python</span>
+                    </div>
+
+                    <div class="skill-icon">
+                        <i class="bi bi-git"></i>
+                        <span>Git</span>
+                    </div>
+
+                    <div class="skill-icon">
+                        <i class="bi bi-github"></i>
+                        <span>GitHub</span>
+                    </div>
+
+                    <div class="skill-icon">
+                        <i class="bi bi-palette"></i>
+                        <span>Design</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="container py-5 mt-5">
+        <h2 class="h3 fw-bold mb-5">Projetos.</h2>
+
+        <!-- Carousel Bootstrap -->
+        <div id="carouselProjetos" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselProjetos" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Projeto 1"></button>
+                <button type="button" data-bs-target="#carouselProjetos" data-bs-slide-to="1"
+                    aria-label="Projeto 2"></button>
+                <button type="button" data-bs-target="#carouselProjetos" data-bs-slide-to="2"
+                    aria-label="Projeto 3"></button>
+            </div>
+
+            <div class="carousel-inner rounded-3 border border-secondary">
+                <div class="carousel-item active">
+                    <img src="img/entretenimento.jpg" class="d-block w-100" alt="Portal de Entretenimento">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h5 class="fw-bold">Meu Portal de Entretenimento Digital</h5>
+                        <p class="text-secondary mb-2">
+                            Portal que reúne filmes, séries, músicas, podcasts, games e tecnologia em um só lugar.
+                        </p>
+                        <a href="https://github.com/oraulbarbosa/Meu-portal-de-Entretenimento-Digital.git"
+                            target="_blank" rel="noopener" class="text-white">Ver projeto →</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/avaliacap.jpg" class="d-block w-100" alt="Sistema de Avaliação">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h5 class="fw-bold">Sistema de Avaliação</h5>
+                        <p class="text-secondary mb-2">
+                            Pesquisa de satisfação com 10 clientes, coletando nome, idade e nota do atendimento.
+                        </p>
+                        <a href="https://github.com/oraulbarbosa/sistema_avaliacao_TudoWeb.git" target="_blank"
+                            rel="noopener" class="text-white">Ver projeto →</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/agua.jpg" class="d-block w-100" alt="Controle de Níveis de Água">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h5 class="fw-bold">Controle de Níveis de Água</h5>
+                        <p class="text-secondary mb-2">
+                            Sistema que simula o monitoramento de um reservatório com alertas conforme o risco.
+                        </p>
+                        <a href="https://github.com/oraulbarbosa/Controle-de-N-veis-de--gua.git" target="_blank"
+                            rel="noopener" class="text-white">Ver projeto →</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjetos" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselProjetos" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+
+        <!-- Cards dos projetos -->
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-secondary h-100">
+                    <img src="img/entretenimento.jpg" class="card-img-top" alt="Projeto Portal de Entretenimento">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Meu Portal de Entretenimento Digital</h5>
+                        <p class="card-text text-secondary">
+                            Portal dedicado ao universo do entretenimento, reunindo conteúdos sobre filmes, séries,
+                            músicas, podcasts, games e tecnologia em um só lugar.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary pt-0">
+                        <a href="https://github.com/oraulbarbosa/Meu-portal-de-Entretenimento-Digital.git"
+                            target="_blank" rel="noopener" class="text-white text-decoration-none">Ver projeto →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-secondary h-100">
+                    <img src="img/avaliacap.jpg" class="card-img-top" alt="Projeto Sistema de Avaliação">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Sistema de Avaliação</h5>
+                        <p class="card-text text-secondary">
+                            Programa que realiza uma pesquisa de satisfação com 10 clientes, coletando nome,
+                            idade e avaliação do atendimento.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary pt-0">
+                        <a href="https://github.com/oraulbarbosa/sistema_avaliacao_TudoWeb.git" target="_blank"
+                            rel="noopener" class="text-white text-decoration-none">Ver projeto →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-secondary h-100">
+                    <img src="img/agua.jpg" class="card-img-top" alt="Projeto Controle de Níveis de Água">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Controle de Níveis de Água</h5>
+                        <p class="card-text text-secondary">
+                            Sistema via terminal que simula o monitoramento de um reservatório de água,
+                            emitindo alertas visuais coloridos conforme o nível de risco.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary pt-0">
+                        <a href="https://github.com/oraulbarbosa/Controle-de-N-veis-de--gua.git" target="_blank"
+                            rel="noopener" class="text-white text-decoration-none">Ver projeto →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="container py-5 mt-5 mb-5">
+        <h2 class="h3 fw-bold mb-5">Contato.</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <p class="text-secondary mb-4">Vamos conversar? Me encontre nas redes ou envie um e-mail.</p>
+                <div class="d-flex flex-column flex-md-row gap-4 mono">
+                    <a href="mailto:raulbarbosa.dev@gmail.com"
+                        class="text-white text-decoration-none d-flex align-items-center">
+                        <i class="bi bi-envelope fs-4 me-2"></i>
+                        <span>raulbarbosa.dev@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/oraulbarbosa" target="_blank" rel="noopener"
+                        class="text-white text-decoration-none d-flex align-items-center">
+                        <i class="bi bi-github fs-4 me-2"></i>
+                        <span>github.com/oraulbarbosa</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raul-henrique-barbosa-92b13a6a/" target="_blank" rel="noopener"
+                        class="text-white text-decoration-none d-flex align-items-center">
+                        <i class="bi bi-linkedin fs-4 me-2"></i>
+                        <span>linkedin.com/in/raul-henrique-barbosa</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="container py-4 border-top border-secondary">
+        <p class="mono text-secondary mb-0 text-center" style="font-size: 0.8rem;">
+            © 2025 Raul Henrique Barbosa — Feito com HTML, CSS & Bootstrap.
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS (bundle) — apenas para navbar mobile e carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
